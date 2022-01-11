@@ -7,10 +7,21 @@
 
 import Spring
 
+protocol FirstViewControllerDelegate {
+    func update(settings: [Double])
+}
+
 class ViewController: UIViewController {
 
     var animation = Animation.slideLeft
     var curve = AnimationCurve.easeIn
+    var velocity = 0.0
+    var delay = 0.0
+    var rotate = 0.0
+    var damping = 0.0
+    var duration = 0.0
+    var repeatCount: Float = 0.0
+    var settingsAnimation: [Double]!
     
     @IBOutlet weak var viewAnimation: SpringView!
     
@@ -24,11 +35,24 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        viewAnimation.delay = settingsAnimation[0]
+//        viewAnimation.rotate = settingsAnimation[1]
+//        viewAnimation.damping = settingsAnimation[2]
+//        viewAnimation.velocity = settingsAnimation[3]
+//        viewAnimation.repeatCount = Float(settingsAnimation[5])
+//        viewAnimation.duration = settingsAnimation[4]
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let destination = segue.destination as? FilterViewController else { return }
+        destination.delegate = self
+    }
+    
     @IBAction func changeAnimation(_ sender: SpringButton) {
         storeAnimations()
         animationCurve()
-        settingsAnimation()
+        parametersAnimation()
         
         nameAnimation.text = "Animation: \(animation)"
         curveAnimation.text = "Curve: \(curve)"
@@ -42,15 +66,14 @@ class ViewController: UIViewController {
         sender.animate()
         
     }
-    private func settingsAnimation() {
-        viewAnimation.delay = 1
-//        viewAnimation.opacity = 10
-//        viewAnimation.rotate = 40
-        viewAnimation.damping = 0.9
-        viewAnimation.velocity = 0.1
-        viewAnimation.repeatCount = 1
-        viewAnimation.delay = 0
-//        viewAnimation.duration = 0.7
+    private func parametersAnimation() {
+//        [delay, rotate, damping, velocity, duration, repeatCount]
+        viewAnimation.delay = 0.0
+        viewAnimation.rotate = 0.0
+        viewAnimation.damping = 0.0
+        viewAnimation.velocity = 0.0
+        viewAnimation.repeatCount = 0.0
+        viewAnimation.duration = 0.0
     }
     
     private func storeAnimations() {
@@ -247,3 +270,17 @@ enum AnimationCurve: CaseIterable {
         return randomCurve
         }
 }
+
+extension ViewController: FirstViewControllerDelegate {
+    func update(settings: [Double]) {
+        settingsAnimation = settings
+    }
+    
+    
+}
+//var velocity: Double!
+//var delay: Double!
+//var rotate: Double!
+//var damping: Double!
+//var duration: Double!
+//var repeatCount: Double!
