@@ -129,45 +129,45 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Bho-Ux-VwB">
-                                <rect key="frame" x="20" y="103" width="374" height="220"/>
+                                <rect key="frame" x="20" y="103" width="646" height="220"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="Eeh-jz-WO9">
-                                        <rect key="frame" x="0.0" y="0.0" width="184.5" height="220"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320.5" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Delay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQH-AQ-nPJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="42.5" height="27.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rotate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L6O-n1-rgg">
                                                 <rect key="frame" x="0.0" y="45.5" width="50" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Damping" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mSe-H8-fdD">
                                                 <rect key="frame" x="0.0" y="84" width="68.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Velocity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z0y-yu-eSA">
                                                 <rect key="frame" x="0.0" y="122.5" width="60.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5T6-1T-eSS">
                                                 <rect key="frame" x="0.0" y="161" width="65.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RepeatCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mjP-lB-A7g">
                                                 <rect key="frame" x="0.0" y="199.5" width="100" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <color key="textColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -176,42 +176,49 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Koe-rg-WTy">
-                                        <rect key="frame" x="189.5" y="0.0" width="184.5" height="220"/>
+                                        <rect key="frame" x="325.5" y="0.0" width="320.5" height="220"/>
                                         <subviews>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="FP8-4D-h8r">
-                                                <rect key="frame" x="-2" y="0.0" width="188.5" height="31"/>
+                                                <rect key="frame" x="-2" y="0.0" width="324.5" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="askSetiings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="DEv-4i-4IN"/>
+                                                    <action selector="askSettings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="NRN-K5-6XX"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="5zg-YN-yIE">
-                                                <rect key="frame" x="-2" y="38" width="188.5" height="31"/>
+                                            <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="180" minValue="0.0" maxValue="360" translatesAutoresizingMaskIntoConstraints="NO" id="5zg-YN-yIE">
+                                                <rect key="frame" x="-2" y="38" width="324.5" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="askSetiings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="9pP-f1-GAl"/>
+                                                    <action selector="askSettings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="B4g-eW-C01"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-Ag-GOT">
-                                                <rect key="frame" x="-2" y="76" width="188.5" height="31"/>
+                                            <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="1Em-Ag-GOT">
+                                                <rect key="frame" x="-2" y="76" width="324.5" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="askSetiings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="Ahx-Ib-dIm"/>
+                                                    <action selector="askSettings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="0Zt-6C-zwZ"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="hKt-x3-yY4">
-                                                <rect key="frame" x="-2" y="114" width="188.5" height="31"/>
+                                            <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="50" minValue="0.0" maxValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="hKt-x3-yY4">
+                                                <rect key="frame" x="-2" y="114" width="324.5" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="askSetiings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="LKH-bo-ueI"/>
+                                                    <action selector="askSettings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="9H0-aB-UHi"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="s20-ds-o3D">
-                                                <rect key="frame" x="-2" y="152" width="188.5" height="31"/>
+                                            <slider opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1.5" minValue="0.0" maxValue="3" translatesAutoresizingMaskIntoConstraints="NO" id="s20-ds-o3D">
+                                                <rect key="frame" x="-2" y="152" width="324.5" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
-                                                    <action selector="askSetiings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="VWa-wJ-Ddd"/>
+                                                    <action selector="askSettings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="FrC-Xm-MF5"/>
                                                 </connections>
                                             </slider>
-                                            <slider opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-3o-2v6">
-                                                <rect key="frame" x="-2" y="190" width="188.5" height="31"/>
+                                            <slider opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Fb1-3o-2v6">
+                                                <rect key="frame" x="-2" y="190" width="324.5" height="31"/>
+                                                <color key="minimumTrackTintColor" red="1" green="0.8018547425" blue="0.2135625709" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="thumbTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <connections>
-                                                    <action selector="askSetiings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="5Sd-jI-76M"/>
+                                                    <action selector="askSettings:" destination="7uy-JV-BmQ" eventType="valueChanged" id="Dyc-jR-bki"/>
                                                 </connections>
                                             </slider>
                                         </subviews>
@@ -234,6 +241,14 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outletCollection property="settingsSlider" destination="FP8-4D-h8r" collectionClass="NSMutableArray" id="UiL-gA-Os8"/>
+                        <outletCollection property="settingsSlider" destination="5zg-YN-yIE" collectionClass="NSMutableArray" id="pGK-fi-hB7"/>
+                        <outletCollection property="settingsSlider" destination="1Em-Ag-GOT" collectionClass="NSMutableArray" id="dQD-20-Nqu"/>
+                        <outletCollection property="settingsSlider" destination="hKt-x3-yY4" collectionClass="NSMutableArray" id="Ku5-5P-a71"/>
+                        <outletCollection property="settingsSlider" destination="s20-ds-o3D" collectionClass="NSMutableArray" id="gtc-vF-AdS"/>
+                        <outletCollection property="settingsSlider" destination="Fb1-3o-2v6" collectionClass="NSMutableArray" id="EYX-or-Doi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AS9-GY-J52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
