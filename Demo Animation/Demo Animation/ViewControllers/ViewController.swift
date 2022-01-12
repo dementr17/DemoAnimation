@@ -23,15 +23,13 @@ class ViewController: UIViewController {
 
     private var animation = Animation.slideLeft
     private var curve = AnimationCurve.easeIn
-    private var velocity = 0.0
-    private var delay = 0.0
-    private var rotate = 0.0
-    private var damping = 0.0
-    private var duration = 0.0
-    private var repeatCount: Float = 0.0
     
     private var settingsAnimation: [Double]!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? FilterViewController else { return }
         destination.delegate = self
@@ -44,8 +42,12 @@ class ViewController: UIViewController {
         
         nameAnimation.text = "Animation: \(animation)"
         curveAnimation.text = "Curve: \(curve)"
+        velocityAnimation.text = "Velocity: \(String(format: "%.2f", viewAnimation.velocity))"
+        durationAnimation.text = "Duration: \(String(format: "%.2f", viewAnimation.duration))"
+        repeatAnimation.text = "RepeatCount: \(String(format: "%.2f", viewAnimation.repeatCount))"
         
         viewAnimation.animate()
+        
         animation = Animation.random()
         curve = AnimationCurve.random()
         sender.setTitle("\(animation)", for: .normal)
@@ -59,12 +61,14 @@ class ViewController: UIViewController {
 
 extension ViewController {
     private func parametersAnimation() {
-        viewAnimation.delay = 0.0
-        viewAnimation.rotate = 0.0
-        viewAnimation.damping = 0.0
-        viewAnimation.velocity = 0.0
-        viewAnimation.repeatCount = 0.0
-        viewAnimation.duration = 0.0
+        if settingsAnimation != nil {
+        viewAnimation.delay = settingsAnimation[0]
+        viewAnimation.rotate = settingsAnimation[1]
+        viewAnimation.damping = settingsAnimation[2]
+        viewAnimation.velocity = settingsAnimation[3]
+        viewAnimation.repeatCount = Float(settingsAnimation[4])
+        viewAnimation.duration = settingsAnimation[5]
+        }
     }
     
     private func storeAnimations() {
