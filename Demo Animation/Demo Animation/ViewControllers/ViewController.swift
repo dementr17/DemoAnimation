@@ -8,7 +8,7 @@
 import Spring
 
 protocol FirstViewControllerDelegate {
-    func update(settings: [Double])
+    func update(settings: [String: Double])
 }
 
 class ViewController: UIViewController {
@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     private var animation = Animation.slideLeft
     private var curve = AnimationCurve.easeIn
     
-    private var settingsAnimation: [Double]!
+    private var settingsAnimation: [String: Double]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -62,12 +62,12 @@ class ViewController: UIViewController {
 extension ViewController {
     private func parametersAnimation() {
         if settingsAnimation != nil {
-        viewAnimation.delay = settingsAnimation[0]
-        viewAnimation.rotate = settingsAnimation[1]
-        viewAnimation.damping = settingsAnimation[2]
-        viewAnimation.velocity = settingsAnimation[3]
-        viewAnimation.repeatCount = Float(settingsAnimation[4])
-        viewAnimation.duration = settingsAnimation[5]
+        viewAnimation.delay = settingsAnimation["delay"]!
+        viewAnimation.rotate = settingsAnimation["rotate"]!
+        viewAnimation.damping = settingsAnimation["damping"]!
+        viewAnimation.velocity = settingsAnimation["velocity"]!
+        viewAnimation.repeatCount = Float(settingsAnimation["repeat"]!)
+        viewAnimation.duration = settingsAnimation["duration"]!
         }
     }
     
@@ -195,7 +195,7 @@ extension ViewController {
 }
 
 extension ViewController: FirstViewControllerDelegate {
-    func update(settings: [Double]) {
+    func update(settings: [String: Double]) {
         settingsAnimation = settings
     } 
 }
