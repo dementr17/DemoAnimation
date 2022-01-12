@@ -8,20 +8,10 @@
 import Spring
 
 protocol FirstViewControllerDelegate {
-    func update(settings: [Double])
+    func update(settings: [String: Double])
 }
 
 class ViewController: UIViewController {
-
-    var animation = Animation.slideLeft
-    var curve = AnimationCurve.easeIn
-    var velocity = 0.0
-    var delay = 0.0
-    var rotate = 0.0
-    var damping = 0.0
-    var duration = 0.0
-    var repeatCount: Float = 0.0
-    var settingsAnimation: [Double]!
     
     @IBOutlet weak var viewAnimation: SpringView!
     
@@ -30,20 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var velocityAnimation: UILabel!
     @IBOutlet weak var durationAnimation: UILabel!
     @IBOutlet weak var repeatAnimation: UILabel!
+
+    private var animation = Animation.slideLeft
+    private var curve = AnimationCurve.easeIn
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        viewAnimation.delay = settingsAnimation[0]
-//        viewAnimation.rotate = settingsAnimation[1]
-//        viewAnimation.damping = settingsAnimation[2]
-//        viewAnimation.velocity = settingsAnimation[3]
-//        viewAnimation.repeatCount = Float(settingsAnimation[5])
-//        viewAnimation.duration = settingsAnimation[4]
-    }
+    private var settingsAnimation: [String: Double]!
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let destination = segue.destination as? FilterViewController else { return }
         destination.delegate = self
@@ -56,8 +38,12 @@ class ViewController: UIViewController {
         
         nameAnimation.text = "Animation: \(animation)"
         curveAnimation.text = "Curve: \(curve)"
+        velocityAnimation.text = "Velocity: \(String(format: "%.2f", viewAnimation.velocity))"
+        durationAnimation.text = "Duration: \(String(format: "%.2f", viewAnimation.duration))"
+        repeatAnimation.text = "RepeatCount: \(String(format: "%.2f", viewAnimation.repeatCount))"
         
         viewAnimation.animate()
+        
         animation = Animation.random()
         curve = AnimationCurve.random()
         sender.setTitle("\(animation)", for: .normal)
@@ -66,14 +52,19 @@ class ViewController: UIViewController {
         sender.animate()
         
     }
+    
+}
+
+extension ViewController {
     private func parametersAnimation() {
-//        [delay, rotate, damping, velocity, duration, repeatCount]
-        viewAnimation.delay = 0.0
-        viewAnimation.rotate = 0.0
-        viewAnimation.damping = 0.0
-        viewAnimation.velocity = 0.0
-        viewAnimation.repeatCount = 0.0
-        viewAnimation.duration = 0.0
+        if settingsAnimation != nil {
+        viewAnimation.delay = settingsAnimation["delay"]!
+        viewAnimation.rotate = settingsAnimation["rotate"]!
+        viewAnimation.damping = settingsAnimation["damping"]!
+        viewAnimation.velocity = settingsAnimation["velocity"]!
+        viewAnimation.repeatCount = Float(settingsAnimation["repeat"]!)
+        viewAnimation.duration = settingsAnimation["duration"]!
+        }
     }
     
     private func storeAnimations() {
@@ -199,88 +190,8 @@ class ViewController: UIViewController {
     }
 }
 
-enum Animation: CaseIterable {
-    case slideLeft
-    case slideRight
-    case slideDown
-    case slideUp
-    case squeezeLeft
-    case squeezeRight
-    case squeezeDown
-    case squeezeUp
-    case fadeIn
-    case fadeOut
-    case fadeOutIn
-    case fadeInLeft
-    case fadeInRight
-    case fadeInDown
-    case fadeInUp
-    case zoomIn
-    case zoomOut
-    case fall
-    case shake
-    case pop
-    case flipX
-    case flipY
-    case morph
-    case squeeze
-    case flash
-    case wobble
-    case swing
-    
-    static func random() -> Animation {
-        let randomAnimation = Animation.allCases.randomElement()!
-        return randomAnimation
-        }
-}
-
-enum AnimationCurve: CaseIterable {
-    case easeIn
-    case easeOut
-    case easeInOut
-    case linear
-    case spring
-    case easeInSine
-    case easeOutSine
-    case easeInOutSine
-    case easeInQuad
-    case easeOutQuad
-    case easeInOutQuad
-    case easeInCubic
-    case easeOutCubic
-    case easeInOutCubic
-    case easeInQuart
-    case easeOutQuart
-    case easeInOutQuart
-    case easeInQuint
-    case easeOutQuint
-    case easeInOutQuint
-    case easeInExpo
-    case easeOutExpo
-    case easeInOutExpo
-    case easeInCirc
-    case easeOutCirc
-    case easeInOutCirc
-    case easeInBack
-    case easeOutBack
-    case easeInOutBack
-    
-    static func random() -> AnimationCurve {
-        let randomCurve = AnimationCurve.allCases.randomElement()!
-        return randomCurve
-        }
-}
-
 extension ViewController: FirstViewControllerDelegate {
-    func update(settings: [Double]) {
+    func update(settings: [String: Double]) {
         settingsAnimation = settings
-    }
-    
-    
+    } 
 }
-//var velocity: Double!
-//var delay: Double!
-//var rotate: Double!
-//var damping: Double!
-//var duration: Double!
-//var repeatCount: Double!
