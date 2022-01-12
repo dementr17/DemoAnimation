@@ -235,9 +235,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ckc-LS-fOB">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="uWS-vb-Lt4">
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="J9S-wM-3cm">
                             <connections>
-                                <action selector="saveSettins:" destination="7uy-JV-BmQ" id="dID-s5-HDS"/>
+                                <action selector="saveSettins:" destination="7uy-JV-BmQ" id="7Fc-a7-WSX"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -265,7 +265,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jie-fm-4vz"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="s01-bP-N91"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FXF-Tx-O22" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
