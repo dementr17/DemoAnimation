@@ -11,13 +11,14 @@ import Spring
 class FilterViewController: UIViewController {
 
     @IBOutlet var settingsSlider: [UISlider]!
+    @IBOutlet var settingsLabel: [UILabel]!
     
-    var settingsAnimation = ["delay": 0.0,
-                             "rotate": 0.0,
-                             "damping": 0.0,
-                             "velocity": 0.0,
-                             "duration": 0.0,
-                             "repeat": 0.0]
+    var settingsAnimation = ["delay": 0.5,
+                             "rotate": 180.0,
+                             "damping": 1.5,
+                             "velocity": 50.0,
+                             "duration": 1.5,
+                             "repeat": 5.0]
     var delegate: FirstViewControllerDelegate!
     
     private var keys: String!
@@ -58,5 +59,6 @@ extension FilterViewController {
         }
         
         settingsAnimation[keys] = Double(settingsSlider[index].value)
+        settingsLabel[index].text = String(format: "%.1f", settingsSlider[index].value)
     }
 }
