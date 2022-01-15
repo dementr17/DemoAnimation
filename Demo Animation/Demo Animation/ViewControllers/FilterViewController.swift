@@ -13,15 +13,17 @@ class FilterViewController: UIViewController {
     @IBOutlet var settingsSlider: [UISlider]!
     @IBOutlet var settingsLabel: [UILabel]!
     
-    var settingsAnimation = ["delay": 0.5,
-                             "rotate": 180.0,
-                             "damping": 1.5,
-                             "velocity": 50.0,
-                             "duration": 1.5,
-                             "repeat": 5.0]
+//    var settingsAnimation = ["delay": 0.5,
+//                             "rotate": 180.0,
+//                             "damping": 1.5,
+//                             "velocity": 50.0,
+//                             "duration": 1.5,
+//                             "repeat": 5.0]
+    var settingsAnimation = Animation.getRandomAnimation()
+    
     var delegate: FirstViewControllerDelegate!
     
-    private var keys: String!
+    private var keys: Double!
     private var index: Int!
     private var slider: Double!
     
@@ -31,8 +33,9 @@ class FilterViewController: UIViewController {
     
     @IBAction func saveSettins(_ sender: Any) {
         delegate.update(settings: settingsAnimation)
+//        routeToView()
     }
-    
+
 }
 
 extension FilterViewController {
@@ -40,25 +43,31 @@ extension FilterViewController {
         switch sender.tag {
         case 0:
             index = 0
-            keys = "delay"
+            settingsAnimation.delay = Double(settingsSlider[index].value)
         case 1:
             index = 1
-            keys = "rotate"
+            settingsAnimation.rotate = Double(settingsSlider[index].value)
         case 2:
             index = 2
-            keys = "damping"
+            settingsAnimation.damping = Double(settingsSlider[index].value)
         case 3:
             index = 3
-            keys = "velocity"
+            settingsAnimation.velocity = Double(settingsSlider[index].value)
         case 4:
             index = 4
-            keys = "duration"
+            settingsAnimation.duration = Double(settingsSlider[index].value)
         default:
             index = 5
-            keys = "repeat"
+            settingsAnimation.repeatCount = Float(settingsSlider[index].value)
         }
         
-        settingsAnimation[keys] = Double(settingsSlider[index].value)
+  
         settingsLabel[index].text = String(format: "%.1f", settingsSlider[index].value)
     }
+    
+//    func routeToView() {
+//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//        let viewController =  storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//        navigationController?.pushViewController(viewController, animated: true)
+//    }
 }
